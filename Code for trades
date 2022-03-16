@@ -1,5 +1,6 @@
-#to make a trade on binance you can use this way (it is using the previous libs)
-#Make sure that you own crypto (for example own BTC if you want to exchange BTC for ETH)
+#To make a trade on binance you can use this way (it is using the previous libs). And you also need 
+#to have created the client variable like it's done in the main part.
+#Make sure that you own crypto (for example own BTC if you want to exchange BTC for ETH).
 
 from binance.enums import *
 order = client.create_order(
