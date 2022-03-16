@@ -1,0 +1,42 @@
+import argparse
+import tweepy
+from textblob import TextBlob
+
+consumer_key = "GbySDOCpQs7DyOAowDQAfosdD"
+consumer_secret = "UarRVGJDVwxOAInO95t6mOYUgXzyjDNZsp2G4zUVN7gLn1WRCC"
+access_token = "1269252580292558848-51HFF40ByFNXmKmX96E4186tHbKtot"
+access_secret = "GTNLn51BkL3wdb6ySDTtXTTpUtOLYCt0PQ0UUp1Fipm57"
+
+parser = argparse.ArgumentParser(prog="tweet-analysis", description="Analyse tweets")
+parser.add_argument("--user", type=str, help="Twitter's username", required=True)
+args = parser.parse_args()
+
+auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
+auth.set_access_token(access_token, access_secret)
+
+api = tweepy.API(auth)
+
+for status in api.user_timeline(screen_name=args.user, count=1):
+    fichier = open("desktop/data.txt", "a")
+    fichier.write(status.text)
+    fichier.write("\n   ")
+    fichier.close()
+    
+#Here you have a file with the last tweet of the tweeter account you wanted to use
+#you can change the number of tweets changing the 'count' value ligne 19.
+#The binance API is only used at the condition below, you can of course erase it.
+
+s = status.text
+str(s)
+
+if s == "YES":
+    from binance.client import Client
+    import config
+
+    apiKey = "VxgXMvOd58cAPzeXZZkrntiGEEePbMOKq4fcCpJCHvjHCfRZfokZY0jZiMSwPp3M"
+    apiSecurity = "JpyHggjhFoj75shS6GAeB9HmIOJSMj9i4OWcX8AA4PheWxUizuu30WETQTaKqtqQ"
+
+    client = Client(apiKey,apiSecurity)
+    print("Whe are in !")
+if s == "NON":
+    print("Get of there")
