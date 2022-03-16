@@ -1,0 +1,10 @@
+#to make a trade on binance you can use this way (it is using the previous libs)
+#Make sure that you own crypto (for example own BTC if you want to exchange BTC for ETH)
+
+from binance.enums import *
+order = client.create_order(
+    symbol = 'BTCETH'           #Make sure that the exchange beetwenn the 2 cryptos exist on binance
+    side = SIDE_BUY             #or SIDE_SELL in order to sell 
+    type = ORDER_TYPE_LIMIT     #type of order (MARKET, STOP_LIMIT, STOP_MARKET)
+    quantity = 0,1              
+    )
