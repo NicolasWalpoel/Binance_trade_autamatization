@@ -1,5 +1,5 @@
 # Binance_trade_autamatization
-Make trades on binance using twitter with python.
+Trade on binance using twitter with python.
 
 Please do not use this code if you don't understand at all what is happening, your crypto (meanning your money) could be compomised. In order to avoid any problems I have separate the trade part from the main code.
 
