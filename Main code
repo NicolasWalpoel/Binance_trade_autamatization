@@ -39,4 +39,4 @@ if s == "YES":
     client = Client(apiKey,apiSecurity)
     print("Whe are in !")
 if s == "NON":
-    print("Get of there")
+    print("Get out !")
